@@ -14,7 +14,9 @@ public class UsingLocalDatesAndTimes {
     public static void main(String[] args) {
         LocalDate february20th = LocalDate.of(2014, Month.FEBRUARY, 20);
         System.out.println(february20th);                                            //2014-02-20
-        System.out.println(LocalDate.from(february20th.plus(15, ChronoUnit.YEARS))); //2029-02-20
+        System.out.println(february20th.plus(15, ChronoUnit.YEARS)); //2029-02-20
+        LocalDateTime march14 = LocalDateTime.of(2014, Month.MARCH, 14, 12, 0, 0);
+        System.out.println(LocalDate.from(march14));
         System.out.println(LocalDate.parse("2014-11-22"));                           //2014-11-22
         System.out.println(LocalDate.MAX);
         System.out.println(LocalDate.MIN);

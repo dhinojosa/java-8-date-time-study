@@ -34,6 +34,8 @@ public class UsingDateTimeAPI {
         // Establishing the local date today, right now
         LocalDate today = LocalDate.now();
 
+        LocalTime.of(2, 10, 9, Integer.MAX_VALUE/2);
+
         today.get(ChronoField.DAY_OF_MONTH);
         LocalDate yesterday = today.minusDays(1);
 
@@ -73,6 +75,44 @@ public class UsingDateTimeAPI {
 
         System.out.println(duration);
 
-        LocalDateTime date = LocalDateTime.of(2012, 11, 12, 13, 11, 12);
+        LocalDateTime date1 = LocalDateTime.of(2012, 11, 12, 13, 11, 12);
+        System.out.println(date1.atZone(ZoneId.of("America/Los_Angeles")));
+
+
+        LocalDateTime daylightSavingsTime = LocalDateTime.of(2014, 3, 9, 2, 0, 0, 0);
+        System.out.println(daylightSavingsTime.atZone(ZoneId.of("America/Denver")));
+
+        LocalDateTime daylightSavingsTime2 = LocalDateTime.of(2014, 3, 9, 2, 30, 0, 0);
+        System.out.println(daylightSavingsTime2.atZone(ZoneId.of("America/New_York")));
+
+        LocalDateTime daylightSavingsTime4 = LocalDateTime.of(2014, 3, 9, 2, 0, 0, 0);
+        System.out.println(daylightSavingsTime4.atZone(ZoneId.of("America/Phoenix")));
+
+        LocalDateTime daylightSavingsTime3 = LocalDateTime.of(2014, 3, 9, 2, 59, 59, 999999999);
+        System.out.println(daylightSavingsTime3.atZone(ZoneId.of("America/Chicago")));
+
+
+        LocalDateTime date2 = LocalDateTime.of(2012, 11, 12, 13, 11, 12);
+        System.out.println(date2.atZone(ZoneId.of("America/Los_Angeles")));
+
+        LocalDateTime standardTime = LocalDateTime.of(2014, 11, 2, 2, 0, 0, 0);
+        System.out.println(standardTime.atZone(ZoneId.of("America/Denver")));
+
+        LocalDateTime standardTime6 = LocalDateTime.of(2014, 11, 2, 1, 30, 0, 0);
+        System.out.println(standardTime6.atZone(ZoneId.of("America/New_York")));
+        System.out.println(standardTime6.atZone(ZoneId.of("America/New_York"))
+                .withEarlierOffsetAtOverlap().toInstant().getEpochSecond());
+        System.out.println(standardTime6.atZone(ZoneId.of("America/New_York"))
+                .withLaterOffsetAtOverlap().toInstant().getEpochSecond());
+
+        LocalDateTime standardTime3 = LocalDateTime.of(2014, 11, 2, 2, 0, 0, 0);
+        System.out.println(standardTime3.atZone(ZoneId.of("America/Phoenix")));
+
+        LocalDateTime standardTime4 = LocalDateTime.of(2014, 11, 2, 2, 59, 59, 999999999);
+        System.out.println(standardTime4.atZone(ZoneId.of("America/Chicago")));
+
+        LocalDateTime daylightSavingsTime6 = LocalDateTime.of(2014, 3, 9, 3, 0, 0, 0);
+        System.out.println(daylightSavingsTime6.atZone(ZoneId.of("America/Chicago")));
+
     }
 }

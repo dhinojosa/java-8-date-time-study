@@ -57,6 +57,12 @@ public class UsingZonedDateTime {
 //        System.out.println(zonedNow.withZoneSameInstant(ZoneId.ofOffset("UTC", ZoneOffset.ofHours(3))));
 
 
+        // 1:30 which 1:30 happens twice, which one?
+        // DateOffset
+
+
+        ZonedDateTime.ofInstant(LocalDateTime.of(2014, 11, 2, 1, 30),
+                ZoneOffset.of("America/Denver"), ZoneId.of("America/Denver"));
 
     }
 }

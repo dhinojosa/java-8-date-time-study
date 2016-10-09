@@ -31,12 +31,15 @@ public class UsingDateTimeFormatter {
 
         System.out.println(dateFormatter.parse("Jan 19, 2014", localDateTemporalQuery));
 
-        System.out.println(dateFormatter.parse("Jan 19, 2014", temporal -> LocalDate.from(temporal)));
+        System.out.println(dateFormatter.parse("Jan 19, 2014", LocalDate::from));
 
         DateTimeFormatter timeFormatter =
                 DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM);
         System.out.println(timeFormatter.format(LocalTime.now())); //3:01:48 PM
         System.out.println(timeFormatter.parse("3:01:48 PM", LocalTime::from));
+
+        MyTemporal tq = new MyTemporal();
+        System.out.println(timeFormatter.parse("3:01:48 PM", tq::queryFrom));
 
         DateTimeFormatter dateTimeFormatter =
                 DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT);

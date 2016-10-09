@@ -4,13 +4,6 @@ import java.time.*;
 import java.time.temporal.*;
 import java.util.GregorianCalendar;
 
-/**
- * @author Daniel Hinojosa
- * @since 12/14/13 7:45 PM
- * url: <a href="http://www.evolutionnext.com">http://www.evolutionnext.com</a>
- * email: <a href="mailto:dhinojosa@evolutionnext.com">dhinojosa@evolutionnext.com</a>
- * tel: 505.363.5832
- */
 public class UsingTemporalAdjusters {
 
     public static void main(String[] args) {

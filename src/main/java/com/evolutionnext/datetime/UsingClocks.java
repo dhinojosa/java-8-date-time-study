@@ -10,6 +10,5 @@ import java.time.*;
  *        tel: 505.363.5832
  */
 public class UsingClocks {
-    public static void main(String[] args) {
-    }
+
 }
